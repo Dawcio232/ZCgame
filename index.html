@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>?abowe CV</title>
+  <style>
+    body {
+      font-family: 'Comic Sans MS', cursive;
+      background: linear-gradient(to right, #b2fefa, #0ed2f7);
+      padding: 40px;
+      margin: 0;
+      color: #2f2f2f;
+    }
+    h1 {
+      text-align: center;
+      font-size: 2.5em;
+      color: #008f00;
+      text-shadow: 1px 1px 2px #fff;
+    }
+    .cv-section {
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 3px 3px 10px rgba(0,0,0,0.1);
+      max-width: 600px;
+      margin: 30px auto;
+      border-left: 8px solid #0a0;
+    }
+    input {
+      padding: 8px;
+      margin: 5px;
+      border: 2px solid #0a0;
+      border-radius: 6px;
+      width: 240px;
+    }
+    button {
+      padding: 10px 15px;
+      background-color: #008f00;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      font-size: 1em;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+    button:hover {
+      background-color: #00b300;
+    }
+    .result {
+      margin-top: 20px;
+    }
+    #frogJump {
+      animation: jump 2s infinite;
+      font-size: 2em;
+      position: fixed;
+      bottom: 10px;
+      right: 20px;
+    }
+    @keyframes jump {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+      100% { transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+<h1>?? ?abowe CV: Symulator kariery skacz?cej ?aby</h1>
+
+<div class="cv-section">
+  <label>Imi? ?aby:</label><br>
+  <input id="frogName" placeholder="?abson"><br>
+
+  <label>Liczba skokow na minut?:</label><br>
+  <input id="frogJumps" type="number" placeholder="np. 42"><br>
+
+  <label>Ulubiony typ b?ota:</label><br>
+  <input id="frogMud" placeholder="B?oto malinowe"><br>
+
+  <label>Kolor wodorostow:</label><br>
+  <input id="frogColor" placeholder="Zielonkawo-z?oty"><br>
+
+  <button onclick="generateCV()">Z?o? CV</button>
+
+  <div class="result" id="cvResult"></div>
+</div>
+
+<div id="frogJump">??</div>
+
+<script>
+  function generateCV() {
+    const name = document.getElementById("frogName").value || "?abek Bezimienny";
+    const jumps = document.getElementById("frogJumps").value || "30";
+    const mud = document.getElementById("frogMud").value || "Uniwersalne b?oto";
+    const color = document.getElementById("frogColor").value || "Zielony jak nadzieja";
+
+    const employers = [
+      "Centrum Medytacji dla Krewetek",
+      "Biuro Zarz?dzania Ka?u??",
+      "Agencja Kosmicznych ?abich Skokow",
+      "Zwi?zek Skacz?cych Amatorow",
+      "Towarzystwo Obserwatorow Lilii Wodnych",
+      "Instytut B?otnych Marze?"
+    ];
+
+    const verdicts = [
+      "Ta ?aba ma potencja?! ????",
+      "Nie widzieli?my jeszcze takich skokow!",
+      "Nadawa?by si? do prac w g??bokiej ka?u?y.",
+      "Zdecydowanie CEO b?ota.",
+      "Zatrudniony od r?ki ¡X bez rozmowy!",
+      "Mog?by by? naszym mistrzem medytacji!"
+    ];
+
+    const employer = employers[Math.floor(Math.random() * employers.length)];
+    const verdict = verdicts[Math.floor(Math.random() * verdicts.length)];
+
+    const output = `
+      <h3>?? CV ?aby: ${name}</h3>
+      <p><strong>Skoki/min:</strong> ${jumps}</p>
+      <p><strong>Typ b?ota:</strong> ${mud}</p>
+      <p><strong>Kolor wodorostow:</strong> ${color}</p>
+      <p><strong>Pracodawca:</strong> ${employer}</p>
+      <p><strong>Ocena:</strong> "${verdict}"</p>
+    `;
+
+    document.getElementById("cvResult").innerHTML = output;
+  }
+</script>
+
+</body>
+</html>
