@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="pl">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>?abowe CV</title>
+  <title>Zabowe CV</title>
   <style>
     body {
       font-family: 'Comic Sans MS', cursive;
@@ -65,60 +65,60 @@
 </head>
 <body>
 
-<h1>?? ?abowe CV: Symulator kariery skacz?cej ?aby</h1>
+<h1>Zabowe CV: Symulator kariery skaczacej zaby</h1>
 
 <div class="cv-section">
-  <label>Imi? ?aby:</label><br>
-  <input id="frogName" placeholder="?abson"><br>
+  <label>Imie zaby:</label><br>
+  <input id="frogName" placeholder="Zabson"><br>
 
-  <label>Liczba skokow na minut?:</label><br>
+  <label>Liczba skokow na minute:</label><br>
   <input id="frogJumps" type="number" placeholder="np. 42"><br>
 
-  <label>Ulubiony typ b?ota:</label><br>
-  <input id="frogMud" placeholder="B?oto malinowe"><br>
+  <label>Ulubiony typ blota:</label><br>
+  <input id="frogMud" placeholder="Bloto malinowe"><br>
 
   <label>Kolor wodorostow:</label><br>
-  <input id="frogColor" placeholder="Zielonkawo-z?oty"><br>
+  <input id="frogColor" placeholder="Zielonkawo-zloty"><br>
 
-  <button onclick="generateCV()">Z?o? CV</button>
+  <button onclick="generateCV()">Zloz CV</button>
 
   <div class="result" id="cvResult"></div>
 </div>
 
-<div id="frogJump">??</div>
+<div id="frogJump">üê∏</div>
 
 <script>
   function generateCV() {
-    const name = document.getElementById("frogName").value || "?abek Bezimienny";
+    const name = document.getElementById("frogName").value || "Zabek Bezimienny";
     const jumps = document.getElementById("frogJumps").value || "30";
-    const mud = document.getElementById("frogMud").value || "Uniwersalne b?oto";
+    const mud = document.getElementById("frogMud").value || "Uniwersalne bloto";
     const color = document.getElementById("frogColor").value || "Zielony jak nadzieja";
 
     const employers = [
       "Centrum Medytacji dla Krewetek",
-      "Biuro Zarz?dzania Ka?u??",
-      "Agencja Kosmicznych ?abich Skokow",
-      "Zwi?zek Skacz?cych Amatorow",
+      "Biuro Zarzadzania Kaluza",
+      "Agencja Kosmicznych Zabich Skokow",
+      "Zwiazek Skaczacych Amatorow",
       "Towarzystwo Obserwatorow Lilii Wodnych",
-      "Instytut B?otnych Marze?"
+      "Instytut Blotnych Marzen"
     ];
 
     const verdicts = [
-      "Ta ?aba ma potencja?! ????",
-      "Nie widzieli?my jeszcze takich skokow!",
-      "Nadawa?by si? do prac w g??bokiej ka?u?y.",
-      "Zdecydowanie CEO b?ota.",
-      "Zatrudniony od r?ki °X bez rozmowy!",
-      "Mog?by by? naszym mistrzem medytacji!"
+      "Ta zaba ma potencjal!",
+      "Nie widzielismy jeszcze takich skokow!",
+      "Nadaje sie do pracy w glebokiej kaluzy.",
+      "Zdecydowanie CEO blota.",
+      "Zatrudniony od reki - bez rozmowy!",
+      "Mistrz medytacji pozycjonowanej!"
     ];
 
     const employer = employers[Math.floor(Math.random() * employers.length)];
     const verdict = verdicts[Math.floor(Math.random() * verdicts.length)];
 
     const output = `
-      <h3>?? CV ?aby: ${name}</h3>
+      <h3>CV Zaby: ${name}</h3>
       <p><strong>Skoki/min:</strong> ${jumps}</p>
-      <p><strong>Typ b?ota:</strong> ${mud}</p>
+      <p><strong>Typ blota:</strong> ${mud}</p>
       <p><strong>Kolor wodorostow:</strong> ${color}</p>
       <p><strong>Pracodawca:</strong> ${employer}</p>
       <p><strong>Ocena:</strong> "${verdict}"</p>
